@@ -29,3 +29,15 @@ function setTheme(theme) {
   }
   closeSettings();
 }
+document.getElementById('searchInput').addEventListener('input', function () {
+  const filter = this.value.toLowerCase();
+  document.querySelectorAll('#gameCategories .category').forEach(category => {
+    let visible = false;
+    category.querySelectorAll('a').forEach(link => {
+      const match = link.textContent.toLowerCase().includes(filter);
+      link.style.display = match ? 'block' : 'none';
+      if (match) visible = true;
+    });
+    category.style.display = visible ? 'block' : 'none';
+  });
+});
