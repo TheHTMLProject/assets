@@ -164,62 +164,28 @@ body.dark .textbox, body.dark .category {
     color: white;
 }
 
-/* --- Toggle button styles with Liquid Glass Effect --- */
-/* --- Toggle button styles with Liquid Glass Effect (using position: fixed) --- */
+/* --- Toggle button styles with Liquid Glass Effect (CENTERED at top) --- */
+/* --- Toggle button styles with Liquid Glass Effect (TOP RIGHT) --- */
 .dark-mode-toggle {
-    position: fixed; /* Changed from 'absolute' (and fixed the typo 'relitave') */
-    top: 20px; /* Moves it 20px from the top edge of the viewport */
-    right: 20px; /* Moves it 20px from the right edge of the viewport */
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s; 
-    
-    /* The 'position: relative;' below is still needed for its pseudo-elements (::before for liquid glass) */
-    position: relative; /* This is for its children/pseudo-elements, not for its own placement on the screen */
-    overflow: hidden; /* Hides the pseudo-element when it's outside the button bounds */
-    border-radius: 50%; /* Keeps the button round */
-    width: 44px; /* Sets a fixed width for the button area */
-    height: 44px; /* Sets a fixed height for the button area */
-    z-index: 999; /* Ensures it stays on top of most other content, choose a high value */
+   position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;ures it stays on top of most other content */
 }
 
-/* ... rest of your .dark-mode-toggle::before, :hover::before, and .material-symbols-outlined styles ... */
-
+/* ... (rest of your .dark-mode-toggle::before, :hover::before, and .material-symbols-outlined styles remain the same) ... */
 
 /* Liquid Glass Pseudo-element */
-.dark-mode-toggle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%; /* Starts off-screen to the left */
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.3) 50%, /* White highlight for the glass effect */
-        rgba(255, 255, 255, 0) 100%
-    );
-    transform: skewX(-20deg); /* Skews the gradient for a slanted glass look */
-    transition: all 0.4s ease-out; /* Smooth animation for the effect */
-    pointer-events: none; /* Allows clicks to pass through to the button */
-}
+
 
 /* Hover effect: slide the pseudo-element across */
-.dark-mode-toggle:hover::before {
-    left: 100%; /* Slides the highlight fully across to the right */
-}
+
 
 /* Subtle hover background for the button itself */
-.dark-mode-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.1); 
-}
+
 
 /* Material Symbols Outlined base styles */
 .material-symbols-outlined {
@@ -356,34 +322,41 @@ footer p {
     transition: color 0.3s;
 }
 
+
 body.dark footer p {
     color: #e0e0e0;
 }
+
+
 /* --- End Link and Text Color Adjustments --- */
 
+/* --- Footer Link Styling --- */
 /* --- Footer Link Styling --- */
 footer a {
     display: block; /* Makes the link take up its own line */
     margin-top: 10px; /* Adds space above the link */
-    color: #007bff; /* A standard blue for links */
+    color: #333; /* Changed to match the footer paragraph's color */
     text-decoration: none; /* Removes default underline */
     transition: color 0.3s ease; /* Smooth color transition */
-    font-weight: 600; /* Makes it slightly bolder */
+    font-weight: normal; /* Changed to match the footer paragraph's font weight */
+    font-size: 14px; /* Changed to match the footer paragraph's font size */
 }
 
 footer a:hover {
-    color: #0056b3; /* Darker blue on hover */
-    text-decoration: underline; /* Adds underline on hover */
+    color: #0056b3; /* Keeping a subtle color change on hover for usability */
+    text-decoration: none; /* Removed underline on hover for a more consistent look with the paragraph */
 }
 
 /* Dark mode adjustments for footer link */
 body.dark footer a {
-    color: #8ab4f8; /* Lighter blue for dark mode */
+    color: #e0e0e0; /* Changed to match the dark mode footer paragraph's color */
 }
 
 body.dark footer a:hover {
-    color: #b3d4ff; /* Even lighter blue on hover in dark mode */
+    color: #b3d4ff; /* Keeping a subtle color change on hover in dark mode */
+    text-decoration: none; /* Removed underline on hover for a more consistent look with the paragraph */
 }
+/* --- End Footer Link Styling --- */
 /* --- End Footer Link Styling --- */
 
 /* --- Content Section Styles (No Gooey Effect on Links, now arrow and underline) --- */
