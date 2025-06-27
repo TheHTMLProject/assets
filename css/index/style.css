@@ -1,150 +1,241 @@
-.theme-btn {
-  @apply px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded hover:bg-gray-200 dark:hover:bg-gray-600;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap');
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.close-btn {
-  @apply mt-4 px-4 py-2 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300;
-}
-       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap');
-
-        body {
-            font-family: 'Noto Sans', sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        h1 {
-    color: #333; 
-    font-weight: bold;  
+h1 {
+    color: #333;
+    font-weight: bold;
     transition: color 0.3s;
 }
-        img {
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .header img {
-            max-width: 120px;
-            height: auto;
-            max-height: 150px;
-            object-fit: contain;
-        }
-        .header {
-            background-color: gray;
-            color: white;
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .header a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            padding: 20px;
-        }
-        .textbox {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            transition: background-color 0.3s;
-        }
-        .category-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
-        .category {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 15px;
-            flex-grow: 1;
-            flex-basis: calc(33.333% - 20px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: background-color 0.3s;
-        }
-        .category h4 {
-            color: gray;
-            margin-bottom: 10px;
-        }
-        .category a {
-            display: block;
-            color: black;
-            text-decoration: none;
-            margin: 5px 0;
-        }
-        .category a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 20px;
-            color: #666;
-        }
-        footer img {
-            max-width: 100%;
-        }
 
-        .search-container {
-            margin: 20px auto;
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            justify-content: center;
-        }
-        .search-input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
+/* --- Logo Styling --- */
+#site-logo {
+    max-width: 120px;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    content: url('https://assets.thehtmlproject.com/icon.jpeg');
+}
 
-        body.dark {
-            background-color: #121212;
-            color: #f0f2f5;
-        }
-        .header.dark {
-            background-color: #333;
-        }
-        .textbox.dark, .category.dark {
-            background-color: #1e1e1e;
-            color: #f0f2f5;
-        }
-        .header.dark h1 {
-            color: white;
-        }
-        .container.dark h1 {
-            color: white;
-        }
+/* Dark mode logo when the body has the 'dark' class */
+body.dark #site-logo {
+    content: url('https://assets.thehtmlproject.com/img/logodark.png');
+}
+/* --- End Logo Styling --- */
 
-        .dark-mode-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            outline: none;
-        }
-        .dark-mode-toggle img {
-            width: 40px;
-            height: 40px;
-        }
+img {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header img {
+    max-width: 120px;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.header {
+    background-color: gray;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Removed background and shadow from .textbox and .category */
+.textbox {
+    background: transparent; 
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: none; 
+    margin-bottom: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.category {
+    background: transparent;
+    border-radius: 8px;
+    padding: 15px;
+    flex-grow: 1;
+    flex-basis: calc(33.333% - 20px);
+    box-shadow: none; 
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.category h4 {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.category a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.category a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 20px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+footer img {
+    max-width: 100%;
+}
+
+.search-container {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* --- Dark mode styles --- */
+body.dark {
+    background-color: #121212;
+    color: #f0f2f5;
+}
+
+.header.dark {
+    background-color: #333;
+}
+
+body.dark .textbox, body.dark .category {
+    background-color: transparent;
+    box-shadow: none;
+    color: #f0f2f5;
+}
+
+.header.dark h1 {
+    color: white;
+}
+
+.container.dark h1 {
+    color: white;
+}
+
+/* --- Toggle button styles with Liquid Glass Effect --- */
+/* --- Toggle button styles with Liquid Glass Effect (using position: fixed) --- */
+.dark-mode-toggle {
+    position: fixed; /* Changed from 'absolute' (and fixed the typo 'relitave') */
+    top: 20px; /* Moves it 20px from the top edge of the viewport */
+    right: 20px; /* Moves it 20px from the right edge of the viewport */
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s; 
+    
+    /* The 'position: relative;' below is still needed for its pseudo-elements (::before for liquid glass) */
+    position: relative; /* This is for its children/pseudo-elements, not for its own placement on the screen */
+    overflow: hidden; /* Hides the pseudo-element when it's outside the button bounds */
+    border-radius: 50%; /* Keeps the button round */
+    width: 44px; /* Sets a fixed width for the button area */
+    height: 44px; /* Sets a fixed height for the button area */
+    z-index: 999; /* Ensures it stays on top of most other content, choose a high value */
+}
+
+/* ... rest of your .dark-mode-toggle::before, :hover::before, and .material-symbols-outlined styles ... */
+
+
+/* Liquid Glass Pseudo-element */
+.dark-mode-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Starts off-screen to the left */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%, /* White highlight for the glass effect */
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg); /* Skews the gradient for a slanted glass look */
+    transition: all 0.4s ease-out; /* Smooth animation for the effect */
+    pointer-events: none; /* Allows clicks to pass through to the button */
+}
+
+/* Hover effect: slide the pseudo-element across */
+.dark-mode-toggle:hover::before {
+    left: 100%; /* Slides the highlight fully across to the right */
+}
+
+/* Subtle hover background for the button itself */
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+/* Material Symbols Outlined base styles */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24; 
+    font-size: 32px;
+    color: white; /* Ensures the icon is always white for visibility on the header */
+    transition: color 0.3s;
+    z-index: 1; /* Ensures the icon appears above the liquid glass effect */
+}
+/* --- End Toggle button styles --- */
+
+/* --- Popup styles --- */
 .popup {
     position: fixed;
     top: 50%;
@@ -167,8 +258,8 @@
 }
 
 .popup a {
-    text-decoration: underline; 
-    color: #007BFF; 
+    text-decoration: underline;
+    color: #007BFF;
     transition: color 0.3s ease;
 }
 
@@ -189,6 +280,7 @@
     background-color: #0056b3;
 }
 
+/* Dark mode specific styles for popup */
 body.dark .popup {
     background-color: #2c2c2c;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 
@@ -212,54 +304,13 @@ body.dark .popup button {
 body.dark .popup button:hover {
     background-color: #555;
 }
-  transition: color 0.3s ease;
-}
+/* --- End Popup styles --- */
 
-.popup button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.popup button:hover {
-    background-color: #0056b3;
-}
-
-body.dark .popup {
-    background-color: #2c2c2c;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 
-                0 4px 6px rgba(0, 0, 0, 0.25);
-}
-
-body.dark .popup h2, 
-body.dark .popup p {
-    color: #f0f2f5;
-}
-
-body.dark .popup a {
-    color: #fff; 
-}
-
-body.dark .popup button {
-    background-color: #333;
-    color: #fff;
-}
-
-body.dark .popup button:hover {
-    background-color: #555;
-}
-
-
+/* --- Link and Text Color Adjustments --- */
+/* The .textbox a rules remain, but the .link-set a rules below will override them for .link-set */
 .textbox a {
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
@@ -267,49 +318,196 @@ body.dark .popup button:hover {
     color: inherit;
 }
 
-
 body.dark .textbox a {
-    color: #f0f2f5;  
+    color: #f0f2f5;
 }
 
 body.dark .textbox a:hover {
-    color: #ffcc00;  
+    color: #ffcc00;
 }
 
-.category h4 {
-    color: #333;  
-    font-weight: bold;  
-    font-size: 1.2em;  
+.category h4, .link-set h3 {
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2em;
     transition: color 0.3s, font-weight 0.3s, font-size 0.3s;
 }
 
-body.dark .category h4 {
-    color: #e0e0e0;  
+body.dark .category h4, body.dark .link-set h3 {
+    color: #e0e0e0;
 }
 
-
-
 .category a {
-    color: #333; 
+    color: #333;
     transition: color 0.3s;
 }
 
-
 body.dark .category a {
-    color: #f0f2f5;  
+    color: #f0f2f5;
 }
 
 body.dark h1 {
-    color: #e0e0e0;  
+    color: #e0e0e0;
 }
 
 footer p {
-    color: #333;  
+    color: #333;
     font-size: 14px;
     transition: color 0.3s;
 }
 
-
 body.dark footer p {
-    color: #e0e0e0;  
+    color: #e0e0e0;
 }
+/* --- End Link and Text Color Adjustments --- */
+
+/* --- Footer Link Styling --- */
+footer a {
+    display: block; /* Makes the link take up its own line */
+    margin-top: 10px; /* Adds space above the link */
+    color: #007bff; /* A standard blue for links */
+    text-decoration: none; /* Removes default underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+    font-weight: 600; /* Makes it slightly bolder */
+}
+
+footer a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+/* Dark mode adjustments for footer link */
+body.dark footer a {
+    color: #8ab4f8; /* Lighter blue for dark mode */
+}
+
+body.dark footer a:hover {
+    color: #b3d4ff; /* Even lighter blue on hover in dark mode */
+}
+/* --- End Footer Link Styling --- */
+
+/* --- Content Section Styles (No Gooey Effect on Links, now arrow and underline) --- */
+.content-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    /* Removed filter: url(#gooey); from here as it conflicts with transparent link backgrounds */
+}
+
+.link-set {
+    background-color: transparent; /* Widget background remains transparent */
+    border-radius: 12px;
+    padding: 25px 35px;
+    box-shadow: none;
+    flex: 1; 
+    min-width: 280px; 
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: left; 
+}
+
+body.dark .link-set {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.link-set h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    color: #4a4a4a;
+    transition: color 0.3s;
+}
+
+body.dark .link-set h3 {
+    color: #f0f2f5;
+}
+
+.link-set ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.link-set li {
+    margin-bottom: 20px;
+}
+
+.link-set li:last-child {
+    margin-bottom: 0;
+}
+
+.link-set a {
+    text-decoration: none; /* Ensure no default underline */
+    display: inline-block; /* Allows padding, width, height, and pseudo-elements */
+    padding: 5px 35px 5px 0; /* Increased padding-right for the arrow */
+    background-color: transparent; /* Button background removed */
+    font-weight: 600;
+    font-size: 1.2em; /* Bigger font size for options */
+    position: relative; /* Needed for pseudo-elements positioning */
+    overflow: hidden; /* Important for hiding the underline outside */
+    transition: color 0.3s; /* Only color transition on the link itself */
+
+    /* Black/white options depending on theme */
+    color: black; /* Default text color for light mode */
+}
+
+body.dark .link-set a {
+    color: white; /* Text color for dark mode */
+}
+
+.link-set a:hover {
+    color: #007bff; /* Highlight color on hover for light mode */
+}
+
+body.dark .link-set a:hover {
+    color: #8ab4f8; /* Highlight color on hover in dark mode */
+}
+
+/* --- Right Arrow Pseudo-element (::before) --- */
+.link-set a::before {
+    content: 'arrow_forward_ios'; /* Material Symbols icon name */
+    font-family: 'Material Symbols Outlined'; /* Apply Material Symbols font */
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24; /* Apply font settings */
+    position: absolute;
+    right: 0; /* Position to the right edge of the link's content box */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%) translateX(100%); /* Start off-screen to the right */
+    opacity: 0; /* Start hidden */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition for arrow movement and visibility */
+    font-size: 1.1em; /* Adjust arrow size if needed relative to link font size */
+    color: inherit; /* Arrow color matches link text color */
+}
+
+.link-set a:hover::before {
+    transform: translateY(-50%) translateX(0); /* Move arrow to visible position */
+    opacity: 1; /* Make arrow visible */
+}
+
+/* --- Cool Underline Animation Pseudo-element (::after) --- */
+.link-set a::after {
+    content: '';
+    position: absolute;
+    width: 0%; /* Start with no width */
+    height: 2px; /* Thickness of the underline */
+    bottom: 0; /* Position at the bottom of the link */
+    left: 0; /* Start from the left */
+    background-color: #007bff; /* Underline color for light mode */
+    transition: width 0.3s ease-out; /* Smooth animation */
+}
+
+.link-set a:hover::after {
+    width: 100%; /* Expand underline to full width on hover */
+}
+
+body.dark .link-set a::after {
+    background-color: #8ab4f8; /* Underline color for dark mode */
+}
+/* --- End Content Section Styles --- */
