@@ -14,9 +14,22 @@ document.addEventListener("DOMContentLoaded", function() {
         siteLogo.src = "https://assets.thehtmlproject.com/icon.jpeg";
     }
 
-    if (localStorage.getItem("darkMode") === "true") {
+
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+
+    if (prefersDarkMode.matches) {
         applyDarkMode();
     } else {
         applyLightMode();
     }
+
+
+    prefersDarkMode.addEventListener('change', (event) => {
+        if (event.matches) {
+            applyDarkMode();
+        } else {
+            applyLightMode();
+        }
+    });
 });
