@@ -1,6 +1,6 @@
     let seconds = 5;
         const timerElement = document.getElementById('timer');
-        const redirectUrl = "/redirect/";
+        const redirectUrl = "/home/redirect/";
 
         const countdown = setInterval(() => {
             seconds--;
