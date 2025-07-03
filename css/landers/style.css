@@ -1,0 +1,80 @@
+ :root {
+            --background-light: #f0f0f0;
+            --text-light: #333;
+            --background-dark: #1a1a1a;
+            --text-dark: #f0f0f0;
+            --primary-button: #28a745; /* Green */
+            --secondary-button: #007BFF; /* Blue */
+            --button-text: white;
+        }
+
+        body {
+            background-color: var(--background-light);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Noto Sans', sans-serif;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--background-dark);
+                color: var(--text-dark);
+            }
+        }
+
+        .title-logo {
+            margin-bottom: 20px;
+        }
+
+        .title-logo .title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .title-logo .logo img {
+            width: 120px;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .description {
+            font-size: 18px;
+            margin-top: 10px;
+            max-width: 600px;
+        }
+
+        .bottom-button {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Noto Sans', sans-serif;
+            width: 250px;
+            margin: 10px 0;
+        }
+
+        .primary {
+            background-color: var(--primary-button);
+            color: var(--button-text);
+            font-weight: bold;
+        }
+
+        .secondary {
+            background-color: var(--secondary-button);
+            color: var(--button-text);
+        }
