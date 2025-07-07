@@ -1,0 +1,204 @@
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap');
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 {
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        img {
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 120px;
+            height: auto;
+            max-height: 150px;
+            object-fit: contain;
+        }
+        .header {
+            background-color: gray;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        .textbox {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .category {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            flex-grow: 1;
+            flex-basis: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .category h4 {
+            color: gray;
+            margin-bottom: 10px;
+        }
+        .category a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+        .category a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 20px;
+            color: #666;
+        }
+        footer img {
+            max-width: 100%;
+        }
+        .search-container {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .back-to-dashboard {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+        .back-to-dashboard:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+        }
+        .back-to-dashboard .material-symbols-outlined {
+            font-size: 20px;
+            margin-right: 5px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+        .back-to-dashboard:hover .material-symbols-outlined {
+            transform: translateX(-5px);
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #f0f2f5;
+            }
+            .header {
+                background-color: #333;
+            }
+            .textbox {
+                background-color: rgba(30, 30, 30, 0.7);
+                color: #f0f2f5;
+            }
+            .category {
+                background-color: #1e1e1e;
+                color: #f0f2f5;
+            }
+            .header h1 {
+                color: white;
+            }
+            .container h1 {
+                color: white;
+            }
+            .back-to-dashboard {
+                color: #f0f2f5;
+            }
+            .back-to-dashboard:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .popup {
+                background-color: #2c2c2c;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4),
+                            0 4px 6px rgba(0, 0, 0, 0.25);
+            }
+            .popup h2,
+            .popup p {
+                color: #f0f2f5;
+            }
+            .popup a {
+                color: #fff;
+            }
+            .popup button {
+                background-color: #333;
+                color: #fff;
+            }
+            .popup button:hover {
+                background-color: #555;
+            }
+            .textbox a {
+                color: #f0f2f5;
+            }
+            .textbox a:hover {
+                color: #ffcc00;
+            }
+            .category h4 {
+                color: #e0e0e0;
+            }
+            .category a {
+                color: #f0f2f5;
+            }
+            h1 {
+                color: #e0e0e0;
+            }
+            footer p {
+                color: #e0e0e0;
+            }
+        }
+        .newest-games-container {
+            margin-bottom: 30px;
+        }
