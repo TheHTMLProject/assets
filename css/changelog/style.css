@@ -1,0 +1,52 @@
+:root{--brand:#004830;--bg:#ffffff;--fg:#222;--muted:#666;--header-light:#d6d9dc;--border:#ddd;--card:#fff;--dark-bg:#121212;--dark-fg:#f0f2f5;--dark-header:#333}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font-family:'Noto Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;transition:background-color .3s ease,color .3s ease}
+.header{background:var(--header-light);color:#111;text-align:center;padding:20px;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+#site-logo{max-width:120px;height:auto}
+.back-to-dashboard{position:absolute;top:20px;left:20px;color:#111;text-decoration:none;font-size:18px;padding:6px 10px;border-radius:8px;display:flex;align-items:center;gap:6px;transition:background-color .3s ease,transform .18s ease}
+.back-to-dashboard .material-symbols-outlined{font-size:22px;line-height:1;display:inline-block}
+.back-to-dashboard:hover{background-color:rgba(0,0,0,.06);text-decoration:none;transform:translateX(-2px)}
+.content-container{flex:1;max-width:900px;margin:60px auto;padding:0 20px}
+.page-title{margin:0 0 8px 0;font-size:32px;text-align:center}
+.intro{text-align:center;color:var(--muted);margin:0 0 30px 0}
+.log{display:grid;gap:24px}
+.entry{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px 16px 18px}
+.entry-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.entry-title{font-size:20px;margin:0}
+.entry-date{font-size:14px;color:var(--muted)}
+.entry-list{margin:12px 0 0 0;padding:0 0 0 18px}
+.entry-list li{margin:6px 0}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;border-radius:999px;background:#eef3ef;color:#184a2c;font-size:12px;border:1px solid #cfe0d5}
+.footer{display:flex;justify-content:center;align-items:center;padding:28px 16px}
+.main-link{display:inline-flex;align-items:center;gap:10px;height:56px;min-width:260px;padding:0 20px;background:#fff;color:#222;border:1px solid #ccc;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.main-link:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.12);text-decoration:none}
+
+@media (prefers-color-scheme: dark){
+  [data-theme="auto"] body{background:var(--dark-bg);color:var(--dark-fg)}
+  [data-theme="auto"] .header{background:var(--dark-header);color:var(--dark-fg)}
+  [data-theme="auto"] .back-to-dashboard{color:var(--dark-fg)}
+  [data-theme="auto"] .back-to-dashboard:hover{background-color:rgba(255,255,255,.08)}
+  [data-theme="auto"] .entry{background:#1a1a1a;border-color:#333}
+  [data-theme="auto"] .entry-date{color:#bdbdbd}
+  [data-theme="auto"] .intro{color:#cfcfcf}
+  [data-theme="auto"] .main-link{background:#1e1e1e;color:var(--dark-fg);border-color:#444;box-shadow:0 4px 12px rgba(255,255,255,.06)}
+  [data-theme="auto"] .main-link:hover{box-shadow:0 8px 16px rgba(255,255,255,.1)}
+  [data-theme="auto"] .tag{background:#183226;color:#e6fff1;border-color:#2a5b46}
+}
+
+[data-theme="dark"] body{background:var(--dark-bg);color:var(--dark-fg)}
+[data-theme="dark"] .header{background:var(--dark-header);color:var(--dark-fg)}
+[data-theme="dark"] .back-to-dashboard{color:var(--dark-fg)}
+[data-theme="dark"] .back-to-dashboard:hover{background-color:rgba(255,255,255,.08)}
+[data-theme="dark"] .entry{background:#1a1a1a;border-color:#333}
+[data-theme="dark"] .entry-date{color:#bdbdbd}
+[data-theme="dark"] .intro{color:#cfcfcf}
+[data-theme="dark"] .main-link{background:#1e1e1e;color:var(--dark-fg);border-color:#444;box-shadow:0 4px 12px rgba(255,255,255,.06)}
+[data-theme="dark"] .main-link:hover{box-shadow:0 8px 16px rgba(255,255,255,.1)}
+[data-theme="dark"] .tag{background:#183226;color:#e6fff1;border-color:#2a5b46}
+
+[data-theme="light"] body{background:var(--bg);color:var(--fg)}
+[data-theme="light"] .header{background:var(--header-light);color:#111}
+[data-theme="light"] .back-to-dashboard{color:#111}
+[data-theme="light"] .entry{background:#fff;border-color:#ddd}
