@@ -1,14 +1,17 @@
- document.addEventListener("DOMContentLoaded", function () {
-      const siteLogo = document.getElementById("site-logo");
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        siteLogo.src = "https://assets.thehtmlproject.com/img/logodark.png";
-      }
-
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        if (event.matches) {
-          siteLogo.src = "https://assets.thehtmlproject.com/img/logodark.png";
-        } else {
-          siteLogo.src = "https://assets.thehtmlproject.com/icon.jpeg";
-        }
-      });
-    });
+document.addEventListener('DOMContentLoaded',function(){
+  const root=document.documentElement
+  const logo=document.getElementById('site-logo')
+  const media=window.matchMedia('(prefers-color-scheme: dark)')
+  function isDark(){
+    const attr=root.getAttribute('data-theme')
+    if(attr==='dark') return true
+    if(attr==='light') return false
+    return media.matches
+  }
+  function applyLogo(){
+    const dark=isDark()
+    logo.src=dark ? 'https://assets.thehtmlproject.com/img/logodark.png' : 'https://assets.thehtmlproject.com/icon.jpeg'
+  }
+  applyLogo()
+  media.addEventListener('change',applyLogo)
+})
