@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",function(){
     else {root.setAttribute('data-theme','auto')}
     const isDark=effectiveDark()
     toggleIcon.textContent=isDark? 'dark_mode' : 'light_mode'
-    logo.src=isDark? 'https://assets.thehtmlproject.com/img/logodark.png' : 'https://assets.thehtmlproject.com/icon.jpeg'
+    logo.src=isDark? 'https://assets.greenrcode.com/img/logodark.png' : 'https://assets.greenrcode.com/icon.jpeg'
   }
   applyTheme()
   media.addEventListener('change',()=>{ if(localStorage.getItem('theme')===null){applyTheme()} })
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded",function(){
   }
   let waitingForReturn=false
   joinBtn.addEventListener("click",()=>{
-    window.open("https://discord.thehtmlproject.com","_blank")
+    window.open("https://discord.greenrcode.com","_blank")
     waitingForReturn=true
     btnInner.classList.add("blur")
   })
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded",function(){
     else {root.setAttribute('data-theme','auto')}
     const isDark=effectiveDark()
     toggleIcon.textContent=isDark? 'dark_mode' : 'light_mode'
-    logo.src=isDark? 'https://assets.thehtmlproject.com/img/logodark.png' : 'https://assets.thehtmlproject.com/icon.jpeg'
+    logo.src=isDark? 'https://assets.greenrcode.com/img/logodark.png' : 'https://assets.greenrcode.com/icon.jpeg'
   }
   applyTheme()
   media.addEventListener('change',()=>{ if(localStorage.getItem('theme')===null){applyTheme()} })
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded",function(){
   }
   let waitingForReturn=false
   joinBtn.addEventListener("click",()=>{
-    window.open("https://discord.thehtmlproject.com","_blank")
+    window.open("https://discord.greenrcode.com","_blank")
     waitingForReturn=true
     btnInner.classList.add("blur")
   })
