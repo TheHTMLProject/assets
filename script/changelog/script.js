@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   function applyLogo(){
     const dark=isDark()
-    logo.src=dark ? 'https://assets.thehtmlproject.com/img/logodark.png' : 'https://assets.thehtmlproject.com/icon.jpeg'
+    logo.src=dark ? 'https://assets.greenrcode.com/img/logodark.png' : 'https://assets.greenrcode.com/icon.jpeg'
   }
 
   applyLogo()
