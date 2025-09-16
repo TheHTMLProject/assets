@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
   function updateLogo() {
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     logo.src = darkMode
-      ? "https://assets.thehtmlproject.com/img/logodark.png"
-      : "https://assets.thehtmlproject.com/icon.jpeg";
+      ? "https://assets.greenrcode.com/img/logodark.png"
+      : "https://assets.greenrcode.com/icon.jpeg";
   }
 
   updateLogo();
