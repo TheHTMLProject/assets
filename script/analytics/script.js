@@ -2,12 +2,15 @@
   var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack) === "1";
   var isDev = location.hostname === "localhost" || location.hostname.endsWith(".local");
 
+  var DEFAULT_MEAS_ID = "G-4VCCFETV10";
+
   var scriptTag = document.currentScript;
-  var MEAS_ID = scriptTag && scriptTag.getAttribute("data-ga-id");
+  var MEAS_ID = (scriptTag && scriptTag.getAttribute("data-ga-id")) || DEFAULT_MEAS_ID;
+
   if (!MEAS_ID || dnt || isDev) return;
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
+  function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
 
   var s = document.createElement("script");
